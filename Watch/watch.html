@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<style>
+  * {
+    /*總體*/
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+  }
+
+  body {
+    /*背景*/
+    background: rgb(146, 230, 255);
+    background-image: url(./Image/bg2.jpg);
+    background-repeat: repeat;
+    
+  }
+
+  .watch-container {
+    /*包住整個表的容器 固定在中間*/
+    width: 300px;
+    margin: 100px auto;
+  }
+
+  /* Watch 0000000000000000000000000000000000000000000*/
+  .watch {
+    position: relative;
+    width: 300px;
+    height: 300px;
+  }
+
+  .watch-face {
+    /*錶面*/
+    width: 300px;
+    height: 300px;
+    border-radius: 100%;
+    border: 5px solid rgb(87, 85, 85);
+    background-image: url(./Image/center.jpg);
+  }
+
+  .watch-face-outline-point {
+    /*錶刻度*/
+    /*00000000000000000000000000000000000000000*/
+    position: absolute;
+    width: 5px;
+    height: 25px;
+    background: rgb(173, 161, 161);
+    left: 145px;
+    top: 24px;
+    transform-origin: 50% 126px;
+    text-align: left;
+  }
+
+  .point-12 {
+    -webkit-transform: rotate(0deg);
+    transform: rotate(0deg);
+    font-size: 20px;
+    color: rgb(179, 176, 176);
+  }
+
+  .point-1 {
+    -webkit-transform: rotate(30deg);
+    transform: rotate(30deg);
+    font-size: 20px;
+    color: rgb(179, 176, 176);
+  }
+
+  .point-2 {
+    -webkit-transform: rotate(60deg);
+    transform: rotate(60deg);
+    font-size: 20px;
+    color: rgb(179, 176, 176);
+  }
+
+  .point-3 {
+    -webkit-transform: rotate(90deg);
+    transform: rotate(90deg);
+    font-size: 20px;
+    color: rgb(179, 176, 176);
+  }
+
+  .point-4 {
+    -webkit-transform: rotate(120deg);
+    transform: rotate(120deg);
+    font-size: 20px;
+    color: rgb(179, 176, 176);
+  }
+
+  .point-5 {
+    -webkit-transform: rotate(150deg);
+    transform: rotate(150deg);
+    font-size: 20px;
+    color: rgb(179, 176, 176);
+  }
+
+  .point-6 {
+    -webkit-transform: rotate(180deg);
+    transform: rotate(180deg);
+    font-size: 20px;
+    color: rgb(179, 176, 176);
+  }
+
+  .point-7 {
+    -webkit-transform: rotate(210deg);
+    transform: rotate(210deg);
+    font-size: 20px;
+    color: rgb(179, 176, 176);
+  }
+
+  .point-8 {
+    -webkit-transform: rotate(240deg);
+    transform: rotate(240deg);
+    font-size: 20px;
+    color: rgb(179, 176, 176);
+  }
+
+  .point-9 {
+    -webkit-transform: rotate(270deg);
+    transform: rotate(270deg);
+    font-size: 20px;
+    color: rgb(179, 176, 176);
+  }
+
+  .point-10 {
+    -webkit-transform: rotate(300deg);
+    transform: rotate(300deg);
+    font-size: 20px;
+    color: rgb(179, 176, 176);
+  }
+
+  .point-11 {
+    -webkit-transform: rotate(330deg);
+    transform: rotate(330deg);
+    font-size: 20px;
+    color: rgb(179, 176, 176);
+  }
+
+  .watch-face-centre {
+    /*錶的中心下圓圈*/
+    position: absolute;
+    width: 12px;
+    height: 12px;
+    top: 144px;
+    left: 144px;
+    border-radius: 100%;
+    background: rgb(143, 143, 143);
+  }
+
+  .watch-face-centre-inner {
+    /*錶的中心上圓圈*/
+    position: absolute;
+    z-index: 1;
+    width: 8px;
+    height: 8px;
+    top: 2px;
+    left: 2px;
+    border-radius: 100%;
+    background: rgb(82, 82, 82);
+    border: 2px solid #727272;
+  }
+
+  .hour {
+    /*時針*/
+    position: absolute;
+    width: 4px;
+    height: 85px;
+    top: 65px;
+    left: 148px;
+    border-radius: 10px;
+    transform-origin: 50% 100%;
+    -webkit-transform: rotate(0deg);
+    transform: rotate(0deg);
+    background-image: url(./Image/stain.jpg);
+  }
+
+  .minute {
+    /*分針*/
+    position: absolute;
+    width: 4px;
+    height: 120px;
+    top: 30px;
+    left: 148px;
+    border-radius: 10px;
+    transform-origin: 50% 100%;
+    -webkit-transform: rotate(0deg);
+    transform: rotate(0deg);
+    background-image: url(./Image/stain.jpg);
+  }
+
+  .second {
+    /*秒針*/
+    position: absolute;
+    width: 2px;
+    height: 145px;
+    top: 20px;
+    left: 149px;
+    border-radius: 10px;
+    transform-origin: 50% 130px;
+    -webkit-transform: rotate(0deg);
+    transform: rotate(0deg);
+    background-image: url(./Image/stain.jpg);
+  }
+
+  .watch-crown {
+    /*右邊轉扭*/
+    position: relative;
+    z-index: -1;
+    width: 15px;
+    height: 26px;
+    top: -163px;
+    left: 295px;
+    border-radius: 5px;
+    background-image: url(./Image/stain.jpg);
+  }
+
+  .watch-strap-top {
+    /*上錶帶*/
+    position: relative;
+    z-index: -1;
+    width: 120px;
+    height: 150px;
+    left: 90px;
+    bottom: -20px;
+    border-radius: 10px 10px 0 0;
+    background-image: url(./Image/leather.jpg);
+  }
+
+  .watch-strap-bottom {
+    /*下錶帶*/
+    position: relative;
+    z-index: -1;
+    width: 120px;
+    height: 200px;
+    left: 90px;
+    bottom: 20px;
+    border-radius: 0 0 10px 10px;
+    background-image: url(./Image/leather.jpg);
+  }
+
+  .mainText {
+    /*錶中央廠牌*/
+    white-space: pre-wrap;
+    color: rgba(211, 211, 211, 0.897);
+    font-weight: bold;
+    text-align: center;
+    padding-top: 80px;
+    text-shadow: inset 1px 1px 1px rgba(0, 0, 0, 0.5);
+  }
+</style>
+
+<head>
+  <meta charset="UTF-8" />
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+</head>
+
+<body>
+  <div class="watch-container">
+
+    <div class="watch-strap-top"></div>
+
+    <div class="watch">
+      <div class="watch-face">
+        <div class="mainText">Amazing&#10;Mandy</div>
+        <div class="watch-face-outline">
+          <div class="watch-face-outline-point point-12">.XII</div>
+          <div class="watch-face-outline-point point-1">.I</div>
+          <div class="watch-face-outline-point point-2">.II</div>
+          <div class="watch-face-outline-point point-3">.III</div>
+          <div class="watch-face-outline-point point-4">.IV</div>
+          <div class="watch-face-outline-point point-5">.V</div>
+          <div class="watch-face-outline-point point-6">.VI</div>
+          <div class="watch-face-outline-point point-7">.VII</div>
+          <div class="watch-face-outline-point point-8">.VIII</div>
+          <div class="watch-face-outline-point point-9">.IX</div>
+          <div class="watch-face-outline-point point-10">.X</div>
+          <div class="watch-face-outline-point point-11">.XI</div>
+        </div>
+
+        <div class="watch-face-centre">
+          <div class="watch-face-centre-inner"></div>
+        </div>
+
+        <div>
+          <div class="hour"></div>
+          <div class="minute"></div>
+          <div class="second"></div>
+        </div>
+      </div>
+
+      <div class="watch-crown"></div>
+    </div>
+
+    <div class="watch-strap-bottom"></div>
+  </div>
+
+</body>
+
+
+<script>
+  $(document).ready(function () {
+    function init() {
+      // Get the time
+      var now = new Date();
+      var time = now.getHours() * 3600 +
+        now.getMinutes() * 60 +
+        now.getSeconds() * 1 +
+        now.getMilliseconds() / 1000;
+
+      // Change the time into degrees
+      var hours = time / 60 / 12 * 6;
+      var minutes = time / 60 * 6;
+      var seconds = time * 6;
+      var date = now.getDate();
+
+      // Modify classes
+      $('.hour').css('transform', 'rotate(' + hours + 'deg)');
+      $('.minute').css('transform', 'rotate(' + minutes + 'deg)');
+      $('.second').css('transform', 'rotate(' + seconds + 'deg)');
+    }
+
+    // Get new time every 50ms
+    setInterval(init, 50);
+  });
+
+</script>
+
+</html>
